@@ -5,7 +5,7 @@ import actionlib
 from actionlib import GoalStatus
 from nav_msgs.msg import Odometry
 from assignment2_rt.msg import Custom_info
-
+from assignment_2_2024.msg import PlanningAction, PlanningGoal
 
 def odom_callback(msg):
     global pub
@@ -26,7 +26,21 @@ def main():
     #rospy.wait_for_message('/odom', Odometry)
     rospy.Subscriber('/odom', Odometry, odom_callback)
 
-    rospy.spin()
+    #rospy.spin()
+    
+    client = actionlib.SimpleActionClient('/reaching_goal', PlanningAction)
+    client.wait_for_server()
+    while not rospy.is_shutdown():
+    	user_input = input("Write g to set a new target or c to cancel the current one: ")
+    	if user_input == 'g':
+    		goal = PlanningGoal()
+    		goal.target_pose.pose.position.x = float(input("Insert the x coordinate: "))
+    		goal.target_pose.pose.position.y = float(input("Insert the y coordinate: "))
+    		client.send_goal(goal)
+    	elif user_input == 'c':
+    		client.cancel_goal()
+    		
+    		
 
     
 if __name__ == '__main__':
