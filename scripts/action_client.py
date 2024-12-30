@@ -23,7 +23,7 @@ def result_converter(current_result):
 		converted_result = "ACTIVE"
 	elif current_result == 2:
 		converted_result = "PREEMPTED"
-	elif current_result == '3':
+	elif current_result == 3:
 		converted_result = "SUCCEEDED"
 	elif current_result == 4:
 		converted_result = "ABORTED"
@@ -47,7 +47,7 @@ def result_callback(msg):
 #	current_result = PlanningActionResult()
 	current_result = msg.status.status
 	converted_result = result_converter(current_result)
-	rospy.loginfo(f"State of goal: {current_result}" + "%s", converted_result)
+	rospy.loginfo(f"State of goal: {current_result}" + ":" + "%s", converted_result)
 
 
 def main():
