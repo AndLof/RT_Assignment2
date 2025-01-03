@@ -16,13 +16,13 @@ robot position and velocity as a custom message. The second node is a service no
 The action client allows the user to input the desired goal position.
 The primary purpose of this node is to:
 1. **input the desired goal position** 
-   To set a new goal, the users simply has to press "g" and insert the coordinates of the desired goal position, follow the instruction displayed on the terminal.
-   The robot will then start moving in order to reach the goal. While the robot is moving, the user can still input a new target position: in this case, the old goal will be preempted and the robot will adjust its movement to reach the new desired position. Notice that the action client provides also information about the running task: sometimes may happen that a message is displayed on the terminal, with the information about the status of the task (e.g SUCCEEDED, PREEMPTED,...). In this case, the user simply press "Enter" and continue with the other required input.
+   To set a new goal, the user simply has to press "g" and insert the coordinates of the desired goal position, follow the instruction displayed on the terminal.
+   The robot will then start moving in order to reach the goal. While the robot is moving, the user can still input a new target position: in this case, the previous task will be preempted and the robot will adjust its movement to reach the new desired position. Notice that the action client provides also information about the running task: it may happen that a message is displayed on the terminal, with the information about the status of the task (e.g SUCCEEDED, PREEMPTED,...). However, the user can continue to input g to set a new goal or c to cancel it.
 
 2. **cancel the goal**. 
    To cancel the goal, it is sufficient to input "c" instead of "g". Also in this case, it is shown the information about the status of the goal and the user will have the possibility to set a desired target position.
 
-
+The action client publishes also the information about robot position and velocity as a custom message on the topic /custom_info
 ---
 
 ### **Second Node - `last_goal_service`**
