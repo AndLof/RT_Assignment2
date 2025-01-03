@@ -43,11 +43,32 @@ def result_converter(current_result):
 def result_callback(msg):
 	global current_result
 	global converted_result
-	converted_result = "Test"
+	#converted_result = "Test"
 #	current_result = PlanningActionResult()
 	current_result = msg.status.status
-	converted_result = result_converter(current_result)
-	rospy.loginfo(f"State of goal: {current_result}" + ":" + "%s", converted_result)
+	if current_result == 0:
+		converted_result = "PENDING"
+	elif current_result == 1:
+		converted_result = "ACTIVE"
+	elif current_result == 2:
+		converted_result = "PREEMPTED"
+	elif current_result == 3:
+		converted_result = "SUCCEEDED"
+	elif current_result == 4:
+		converted_result = "ABORTED"
+	elif current_result == 5:
+		converted_result = "REJECTED"
+	elif current_result == 6:
+		converted_result = "PREEMPTING"
+	elif current_result == 7:
+		converted_result = "RECALLING"
+	elif current_result == 8:
+		converted_result = "RECALLED"
+	elif current_result == 9:
+		converted_result = "LOST"
+	
+	#converted_result = result_converter(current_result)
+	rospy.loginfo(f"State of goal: {current_result}" + ":" + "%s", converted_result + ".Press Enter to continue")
 
 
 def main():
