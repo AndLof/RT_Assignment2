@@ -1,0 +1,80 @@
+\hypertarget{last__goal__service_8py}{}\doxysection{scripts/last\+\_\+goal\+\_\+service.py File Reference}
+\label{last__goal__service_8py}\index{scripts/last\_goal\_service.py@{scripts/last\_goal\_service.py}}
+
+
+Service node to return information about last goal.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{last__goal__service_8py_a78ad24d1c1fa5bbff0c2d45dd1def6c9}{last\+\_\+goal\+\_\+service.\+goal\+\_\+callback}} (msg)
+\begin{DoxyCompactList}\small\item\em Callback function for the /reaching\+\_\+goal/goal topic. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{last__goal__service_8py_afd792e767a944d1c867328f08ce9de5e}{last\+\_\+goal\+\_\+service.\+service\+\_\+function}} (req)
+\begin{DoxyCompactList}\small\item\em Service callback function to return the last goal coordinates. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{last__goal__service_8py_ab7b1946dbfaee2193fc0f761b3baebe5}\label{last__goal__service_8py_ab7b1946dbfaee2193fc0f761b3baebe5}} 
+def \mbox{\hyperlink{last__goal__service_8py_ab7b1946dbfaee2193fc0f761b3baebe5}{last\+\_\+goal\+\_\+service.\+main}} ()
+\begin{DoxyCompactList}\small\item\em Main function to initialize the service node and subscribers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{last__goal__service_8py_ab25865a88f2b188a07268e9ee75248ea}\label{last__goal__service_8py_ab25865a88f2b188a07268e9ee75248ea}} 
+\mbox{\hyperlink{last__goal__service_8py_ab25865a88f2b188a07268e9ee75248ea}{last\+\_\+goal\+\_\+service.\+last\+\_\+goal}} = None
+\begin{DoxyCompactList}\small\item\em Stores the last received goal position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Service node to return information about last goal. 
+
+\begin{DoxyAuthor}{Author}
+Andrea Loforese 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+13/03/2025
+\end{DoxyDate}
+Subrscibes to\+: ~\newline
+ /reaching\+\_\+goal/goal
+
+Service\+: ~\newline
+ last\+\_\+goal
+
+Description\+: ~\newline
+ The node is executed with the launch file; it returns the coordinates of the last goal sent by the user. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{last__goal__service_8py_a78ad24d1c1fa5bbff0c2d45dd1def6c9}\label{last__goal__service_8py_a78ad24d1c1fa5bbff0c2d45dd1def6c9}} 
+\index{last\_goal\_service.py@{last\_goal\_service.py}!goal\_callback@{goal\_callback}}
+\index{goal\_callback@{goal\_callback}!last\_goal\_service.py@{last\_goal\_service.py}}
+\doxysubsubsection{\texorpdfstring{goal\_callback()}{goal\_callback()}}
+{\footnotesize\ttfamily def last\+\_\+goal\+\_\+service.\+goal\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+
+
+Callback function for the /reaching\+\_\+goal/goal topic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Message containing the latest goal position. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{last__goal__service_8py_afd792e767a944d1c867328f08ce9de5e}\label{last__goal__service_8py_afd792e767a944d1c867328f08ce9de5e}} 
+\index{last\_goal\_service.py@{last\_goal\_service.py}!service\_function@{service\_function}}
+\index{service\_function@{service\_function}!last\_goal\_service.py@{last\_goal\_service.py}}
+\doxysubsubsection{\texorpdfstring{service\_function()}{service\_function()}}
+{\footnotesize\ttfamily def last\+\_\+goal\+\_\+service.\+service\+\_\+function (\begin{DoxyParamCaption}\item[{}]{req }\end{DoxyParamCaption})}
+
+
+
+Service callback function to return the last goal coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & Service request (unused in this case). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Last\+\_\+goal\+Response containing the last goal coordinates. 
+\end{DoxyReturn}

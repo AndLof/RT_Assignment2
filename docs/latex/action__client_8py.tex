@@ -1,0 +1,91 @@
+\hypertarget{action__client_8py}{}\doxysection{scripts/action\+\_\+client.py File Reference}
+\label{action__client_8py}\index{scripts/action\_client.py@{scripts/action\_client.py}}
+
+
+Node for Action Client\+: user interface.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{action__client_8py_aa73b11bbad55b91ca1fe63acc236b20a}{action\+\_\+client.\+odom\+\_\+callback}} (msg)
+\begin{DoxyCompactList}\small\item\em Callback function to handle odometry messages and publish robot state. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{action__client_8py_a2bebbe51332a6a16f48ebe956a17f792}{action\+\_\+client.\+result\+\_\+callback}} (msg)
+\begin{DoxyCompactList}\small\item\em Callback function to handle goal result messages and display the goal state. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{action__client_8py_aece5b3dc7f370ff7ab45e105b5e6bbaa}{action\+\_\+client.\+main}} ()
+\begin{DoxyCompactList}\small\item\em Main function to initialize the node, handle user input, and send/cancel goals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Node for Action Client\+: user interface. 
+
+\begin{DoxyAuthor}{Author}
+Andrea Loforese 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+13/03/2025
+\end{DoxyDate}
+Subrscibes to\+: ~\newline
+ /odom ~\newline
+ /reaching\+\_\+goal/result
+
+Publish to\+: ~\newline
+ /custom\+\_\+info
+
+Description\+: ~\newline
+ This node consists to an action client that allows the user to control the robot into the simulation environment, providing a simple interface to set the desired goal position or to cancel it; besides, it publishes real time informations about robot\textquotesingle{}s velocity and position. Whenever a goal position is reached or canceled, a message is diplayed on the terminal. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{action__client_8py_aece5b3dc7f370ff7ab45e105b5e6bbaa}\label{action__client_8py_aece5b3dc7f370ff7ab45e105b5e6bbaa}} 
+\index{action\_client.py@{action\_client.py}!main@{main}}
+\index{main@{main}!action\_client.py@{action\_client.py}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def action\+\_\+client.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main function to initialize the node, handle user input, and send/cancel goals. 
+
+Sends a goal to the action server. 
+\begin{DoxyParams}{Parameters}
+{\em goal} & The target position goal.\\
+\hline
+\end{DoxyParams}
+Cancels the current goal being processed by the action server. 
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{action__client_8py_aa73b11bbad55b91ca1fe63acc236b20a}\label{action__client_8py_aa73b11bbad55b91ca1fe63acc236b20a}} 
+\index{action\_client.py@{action\_client.py}!odom\_callback@{odom\_callback}}
+\index{odom\_callback@{odom\_callback}!action\_client.py@{action\_client.py}}
+\doxysubsubsection{\texorpdfstring{odom\_callback()}{odom\_callback()}}
+{\footnotesize\ttfamily def action\+\_\+client.\+odom\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+
+
+Callback function to handle odometry messages and publish robot state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Odometry message containing the robot\textquotesingle{}s current state. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{action__client_8py_a2bebbe51332a6a16f48ebe956a17f792}\label{action__client_8py_a2bebbe51332a6a16f48ebe956a17f792}} 
+\index{action\_client.py@{action\_client.py}!result\_callback@{result\_callback}}
+\index{result\_callback@{result\_callback}!action\_client.py@{action\_client.py}}
+\doxysubsubsection{\texorpdfstring{result\_callback()}{result\_callback()}}
+{\footnotesize\ttfamily def action\+\_\+client.\+result\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+
+
+Callback function to handle goal result messages and display the goal state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Planning\+Action\+Result message containing the goal status. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,23 @@
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{$<$strong$>$\+R\+O\+S Package Documentation$<$/strong$>$}\label{md__r_e_a_d_m_e_autotoc_md1}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysubsection{$<$strong$>$\+Description$<$/strong$>$}\label{md__r_e_a_d_m_e_autotoc_md2}
+This R\+OS package consists of two nodes implemented in python. The purpose of the project is to manage and control a robot in a simulation environment, provided by the assignment. The first node consinsts in the action client and it allows the user to set a target or to cancel it; it uses the status of the action server to know when the target has been reached. Besides, the action client publishes the robot position and velocity as a custom message. The second node is a service node that, when called, returns the coordinates of the last target sent by the user. The package contains also a launch file that allows the user to execute all the required nodes to run the simulation.
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{$<$strong$>$\+Nodes Description$<$/strong$>$}\label{md__r_e_a_d_m_e_autotoc_md4}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsubsection{$<$strong$>$\+First Node -\/ $<$tt$>$action\+\_\+client$<$/tt$>$$<$/strong$>$}\label{md__r_e_a_d_m_e_autotoc_md5}
+The action client allows the user to input the desired goal position. The primary purpose of this node is to\+:
+\begin{DoxyEnumerate}
+\item {\bfseries{input the desired goal position}} To set a new goal, the user simply has to press \char`\"{}g\char`\"{} and insert the coordinates of the desired goal position, follow the instruction displayed on the terminal. The robot will then start moving in order to reach the goal. While the robot is moving, the user can still input a new target position\+: in this case, the previous task will be preempted and the robot will adjust its movement to reach the new desired position. Notice that the action client provides also information about the running task\+: it may happen that a message is displayed on the terminal, with the information about the status of the task (e.\+g S\+U\+C\+C\+E\+E\+D\+ED, P\+R\+E\+E\+M\+P\+T\+ED,...). However, the user can continue to input g to set a new goal or c to cancel it.
+\item {\bfseries{cancel the goal}}. To cancel the goal, it is sufficient to input \char`\"{}c\char`\"{} instead of \char`\"{}g\char`\"{}. Also in this case, it is shown the information about the status of the goal and the user will have the possibility to set a desired target position.
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{The action client publishes also the information about robot position and velocity as a custom message on the topic /custom\+\_\+info}\label{md__r_e_a_d_m_e_autotoc_md6}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsubsection{$<$strong$>$\+Second Node -\/ $<$tt$>$last\+\_\+goal\+\_\+service$<$/tt$>$$<$/strong$>$}\label{md__r_e_a_d_m_e_autotoc_md7}
+This node is a service node that returns the coordinates of the last goal sent by the user. The node is executed with the launch file; since there is no other nodes that call the service, to test it is sufficient to open a new terminal and run \$rosservice call /last\+\_\+goal. A message (with the same structure of the goal message) will be displayed on the terminal.
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsection{$<$strong$>$\+How to Run the Package$<$/strong$>$}\label{md__r_e_a_d_m_e_autotoc_md9}
+I\+M\+P\+O\+R\+T\+A\+NT\+: in order to be correctly executed, the implemented launch file requires the presence of the package \char`\"{}assignment\+\_\+2\+\_\+2024\char`\"{}, provided by the assignment.
+
+To run the simulation it is sufficient to run \$roslaunch assignment2\+\_\+rt assignment2\+\_\+rt.\+launch
+
+\DoxyHorRuler{0}
+ 
