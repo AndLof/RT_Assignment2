@@ -16,7 +16,7 @@
 # last_goal
 #
 # Description: <BR>
-# The node is executed with the launch file; it returns the coordinates of the last goal sent by the user.
+# The node is executed with the launch file; it returns the coordinates of the last goal sent by the user whenever the command "rosservice call /last_goal" is executed in the terminal.
 
 import rospy
 import actionlib

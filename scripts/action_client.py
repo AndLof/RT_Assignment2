@@ -18,7 +18,7 @@
 #
 # Description: <BR>
 # This node consists to an action client that allows the user to control the robot into the simulation environment, providing a simple interface to set the desired goal position or to cancel it;
-# besides, it publishes real time informations about robot's velocity and position. Whenever a goal position is reached or canceled, a message is diplayed on the terminal.
+# besides, it publishes real time informations about robot's velocity and position. Whenever a goal position is reached or canceled, a message is displayed on the terminal.
 
 import rospy
 import actionlib
@@ -114,12 +114,12 @@ def main():
     			except ValueError:
     				print("Wrong input. Please insert a valid number.")
     		##
-    		# \brief Sends a goal to the action server.
-    		# \param goal The target position goal.
+    		# \brief Sends a goal to the action server:
+    		# \param goal The target goal position (set by the user in the terminal).
     		client.send_goal(goal)
     	elif user_input == 'c':
     		##
-    		# \brief Cancels the current goal being processed by the action server.
+    		# \brief Cancels the current goal being processed by the action server:
     		# \param None
     		client.cancel_goal()
     		

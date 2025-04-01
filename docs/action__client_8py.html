@@ -98,7 +98,7 @@ Functions</h2></td></tr>
 <p>Publish to: <br  />
  /custom_info</p>
 <p>Description: <br  />
- This node consists to an action client that allows the user to control the robot into the simulation environment, providing a simple interface to set the desired goal position or to cancel it; besides, it publishes real time informations about robot's velocity and position. Whenever a goal position is reached or canceled, a message is diplayed on the terminal. </p>
+ This node consists to an action client that allows the user to control the robot into the simulation environment, providing a simple interface to set the desired goal position or to cancel it; besides, it publishes real time informations about robot's velocity and position. Whenever a goal position is reached or canceled, a message is displayed on the terminal. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="aece5b3dc7f370ff7ab45e105b5e6bbaa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aece5b3dc7f370ff7ab45e105b5e6bbaa">&#9670;&nbsp;</a></span>main()</h2>
@@ -116,13 +116,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Main function to initialize the node, handle user input, and send/cancel goals. </p>
-<p>Sends a goal to the action server. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Sends a goal to the action server: </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">goal</td><td>The target position goal.</td></tr>
+    <tr><td class="paramname">goal</td><td>The target goal position (set by the user in the terminal).</td></tr>
   </table>
   </dd>
 </dl>
-<p>Cancels the current goal being processed by the action server. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Cancels the current goal being processed by the action server: </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">None</td><td></td></tr>
   </table>
